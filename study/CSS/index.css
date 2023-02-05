@@ -1,0 +1,335 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #f3f5f7;
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+/* before这个类用于解决外边距塌陷问题 */
+.clearfix::before,.clearfix::after{
+    content:'';
+    display:table;
+}
+/* 这个类是真正清除浮动的标签 */
+.clearfix::after{
+    clear:both;
+}
+
+/* 版心 */
+.wrapper{
+    width: 1200px;
+    margin: 0px auto;
+}
+
+/* 头部 */
+.header{
+    height: 42px;
+    margin: 30px auto;
+}
+
+h1{
+    float: left;
+}
+
+.nav{
+    float: left;
+    height: 42px;
+    margin-left: 70px;
+}
+
+.nav ul li{
+    float: left;
+    margin-right: 26px;
+}
+
+.nav ul li a{
+    display: block;
+    height: 42px;
+    line-height: 42px;
+    padding: 0 9px;
+    font-size: 18px;
+    color: #050505;
+}
+
+.nav ul li a:hover{
+    border-bottom: 2px solid #00a4ff;
+}
+
+.search{
+    float: left;
+    width: 412px;
+	height: 40px;
+    margin-left: 59px;
+	border: solid 1px #00a4ff;
+}
+
+.search input{
+    width: 360px;
+    height: 38px;
+    border: 0;
+    padding-left: 20px;
+}
+
+.search input::placeholder{
+    font-size: 14px;
+    color: #bfbfbf;
+}
+
+.search button{
+    float: right;
+    width: 50px;
+    height: 40px;
+    background-image: url(../images/btn.png);
+    border: 0;
+}
+
+.user{
+    float: right;
+    margin-right: 35px;
+    height: 40px;
+    line-height: 40px;
+}
+
+.user img{
+    /* 调节图片垂直位置，middle居中 */
+    vertical-align: middle;
+}
+
+/* 轮播图 */
+.banner{
+    height: 420px;
+    background-color: #1c036c;
+}
+
+.banner .wrapper{
+    height: 420px;
+    background-image: url(../images/banner2.png);
+}
+
+.banner .left{
+    float: left;
+    width: 190px;
+    height: 420px;
+    background-color:rgba(0,0,0,0.3);
+}
+
+.banner .right{
+    float: right;
+    width: 228px;
+    height: 300px;
+    background-color: #fff;
+    margin-top: 50px;
+}
+
+/* 轮播页左边导航内容 */
+.banner  li{
+    width: 190px;
+    margin: 24px 0 0 20px;
+}
+
+.banner li:first-child{
+    margin-top: 15px;
+}
+
+.banner li a{
+    font-size: 14px;
+    color: #fff;
+}
+
+.banner li a span{
+    margin-left: 80px;
+}
+
+.banner li a:hover{
+    color: #00b4ff;
+}
+
+/* 轮播页右边导航内容 */
+.banner .right h2{
+    height: 48px;
+    background-color: #9bceea;
+    line-height: 48px;
+    text-align: center;
+    font-size: 18px;
+    color: #fff;
+}
+
+.banner .right .studing{
+    width: 228px;
+    height: 198px;
+    padding: 0 18px;
+}
+
+.banner .right dl{
+    width: 192px;
+    height: 66px;
+    padding: 12px 0;
+    font-size: 16px;
+    color: #4e4e4e;
+    border-bottom: 2px solid #e5e5e5;
+}
+
+.banner .right dl dd{
+    font-size: 12px;
+    color: #a5a5a5;
+}
+
+.banner .right .studing a{
+    display: block;
+    width: 200px;
+    height: 40px;
+    margin: 4px auto 0;
+    line-height: 40px;
+    text-align: center;
+    border: 1px solid #00a4ff;
+    color: #00a4ff;
+    font-weight: 700;
+}
+
+/* 精品推荐 */
+.goods{
+    margin-top: 8px;
+    height: 60px;
+    background-color: #fff;
+    box-shadow: 0px 2px 3px 0px 
+		rgba(118, 118, 118, 0.2);
+}
+
+.goods ul li{
+    float: left;
+    width: 98px;
+    height: 18px;
+    margin: 21px 0 21px 34px;
+    /* padding: 0 30px; */
+    border-right: 1px solid #bfbfbf;
+    color: #00a4ff;
+}
+
+.goods ul li:last-child{
+    border: none;
+}
+
+.goods ul a {
+    color: #000;
+}
+
+.goods .set{
+    float: right;
+    height: 18px;
+    margin-top: 21px;
+    margin-right:34px;
+    line-height: 18px;
+    font-size: 14px;
+    color: #00a4ff;
+}
+
+/* 精品推荐课程 */
+.box {
+    margin-top: 35px;
+}
+
+.box .title{
+    height: 40px;
+}
+
+.box .title h2{
+    float: left;
+    font-weight: 400;
+    font-size: 20px;
+    color: #494949;
+}
+
+.box .title a{
+    float: right;
+    margin-right: 30px;
+    font-size: 12px;
+    color: #a5a5a5;
+}
+
+.box .content li{
+    float: left;
+    position: relative;
+    width: 228px;
+    height: 270px;
+    margin: 0 15px 15px 0;
+    background-color: #fff;
+}
+
+.box .content li:nth-child(5n){
+    margin: 0;
+}
+
+/* 底部 */
+.footer{
+    height: 470px;
+    margin-top: 40px;
+    padding-top: 30px;
+    background-color: #fff;
+}
+
+.footer .left{
+    float: left;
+}
+
+.footer .left p{
+    margin: 20px 0 10px;
+    font-size: 12px;
+    color: #666;
+}
+
+.footer .left a{
+    display: inline-block;
+    width: 120px;
+    height: 36px;
+    border: 1px solid #00a4ff;
+    color: #00a4ff;
+    line-height: 36px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.footer .right{
+    float: right;
+}
+
+.footer .right dl{
+    float: left;
+    margin-left: 120px;
+}
+
+/* 精品推荐课程部分li的内容 */
+.content ul a p{
+    padding: 20px;
+    font-size: 14px;
+    color: #050505;
+}
+
+.content ul a span{
+    padding: 0 20px;
+    font-size: 12px;
+    color: #777777;
+}
+
+.content ul a span .orange{
+    padding: 0;
+    color: #ff7c2d;
+}
+
+
+/* 课程模块的hot定位 */
+.box .content .hot{
+    position: absolute;
+    top: 4px;
+    right: -4px;
+}
+
