@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            margin: 100px auto;
+            width: 330px;
+            height: 55px;
+            text-align: center;
+            line-height: 55px;
+            border: 1px solid #000;
+        }
+        a{
+            display: block;
+            float: left;
+        }
+        img{
+            width: 80px;
+            background-image: url(image/1.jpg);
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="box">
+        <a href="#"><img src="image/1.jpg" alt=""></a>
+        <a href="#"><img src="image/2.jpg" alt=""></a>
+        <a href="#"><img src="image/3.jpg" alt=""></a>
+        <a href="#"><img src="image/4.jpg" alt=""></a>
+    </div>
+
+
+    <script>
+        // 点击小图片，body背景会变成该图片
+        var img = document.querySelectorAll('img');
+        for(var i = 0; i < img.length; i++){
+            img[i].onclick = function() {
+                // 这里注意this.src格式
+                document.body.style.backgroundImage = 'url('+ this.src +')';
+                // console.log(this.src);
+            }
+        }
+    </script>
+</body>
+</html>

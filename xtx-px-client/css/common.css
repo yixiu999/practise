@@ -1,0 +1,216 @@
+/* 各个页面相同的样式表：头，尾部 */
+
+/* 版心 */
+.wrapper{
+    width: 1240px;
+    margin: 0 auto;
+}
+
+/* 快捷导航 */
+.shortcut{
+    height: 52px;
+    background-color: #333;
+}
+
+.shortcut ul{
+    float: right;
+    line-height: 52px;
+}
+
+.shortcut ul li{
+    float: left;
+}
+
+.shortcut ul li a{
+    padding: 0 16px;
+    border-right: 1px solid #666;
+    font-size: 14px;
+    color: #dcdcdc;
+}
+
+.shortcut ul li:last-child a{
+    border-right: none;
+}
+
+.shortcut ul li a span{
+    display: inline-block;
+    margin-right: 8px;
+    width: 11px;
+    height: 16px;
+    background-image: url(../images/sprites.png);
+    background-position: -160px -70px;
+    vertical-align: middle;
+}
+
+/* 头部 */
+.header{
+    margin-top: 30px;
+    height: 70px;
+}
+
+.header .logo{
+    float: left;
+}
+
+/* logo搜索引擎优化做法 */
+.header .logo h1{
+    height: 70px;
+    width: 207px;
+}
+
+.header .logo h1 a{
+    display: block;
+    width: 207px;
+    height: 70px;
+    background-image: url(../images/logo.png);
+    background-size: contain;
+    /* 设置文字大小目的让a里面的文字看不见 */
+    font-size: 0;
+}
+
+.header .nav{
+    float: left;
+    margin-left: 40px;
+    height: 70px;
+}
+
+.header .nav ul li{
+    float: left;
+    margin-right: 48px;
+    line-height: 70px;
+}
+
+.header .nav ul li a{
+    padding-bottom: 7px;
+}
+
+.header .nav ul li a:hover{
+    color: #27ba9b;
+    border-bottom: 1px solid #27ba9b;
+}
+
+.header .search{
+    position: relative;
+    float: left;
+    margin-left: 34px;
+    margin-top: 24px;
+    height: 30px;
+    width: 172px;
+    border-bottom: 2px solid #e7e7e7;
+}
+
+.header .search input{
+    padding-left: 30px;
+    width: 172px;
+    height: 28px;
+}
+
+.header .search input::placeholder{
+    font-style: 14px;
+}
+
+.header .search span{
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background-image: url(../images/sprites.png);
+    background-position: -79px -70px;
+}
+
+
+/* 购物车 */
+.header .car{
+    position: relative;
+    float: right;
+    margin-top: 28px;
+    margin-right: 27px;
+    width: 23px;
+    height: 23px;
+}
+
+.header .car a{
+    display: block;
+    width: 23px;
+    height: 23px;
+    background-image: url(../images/sprites.png);
+    background-position: -120px -70px;
+}
+
+.header .car span{
+    position: absolute;
+    right: -13px;
+    top: -7px;
+    width: 20px;
+	height: 15px;
+    color: #fff;
+    font-size: 13px;
+    text-align: center;
+    line-height: 15px;
+	background-color: #e26237;
+	border-radius: 8px;
+}
+
+/* 版权区域样式 */
+.footer{
+    margin-top: 50px;
+    background-color: #333;
+    height: 342px;
+}
+
+.footer .wrapper{
+    width: 1393px;
+}
+
+.footer .top{
+    padding-top: 50px;
+    padding-left: 135px;
+    height: 170px;
+    border-bottom: 3px solid #434343;
+}
+
+.footer .top li{
+    float: left;
+    margin-right: 300px;
+    width: 195px;
+    height: 58px;
+    line-height: 58px;
+    color: #fff;
+    font-size: 28px;
+}
+
+.footer .top li:last-child{
+    margin-right: 0;
+}
+
+/* 利用伪元素给li加上精灵图 */
+.footer .top li::before{
+    content: '';
+    display: inline-block;
+    width: 61px;
+    height: 58px;
+    vertical-align: middle;
+    background-image: url(../images/sprites.png);
+}
+
+.footer .top li:nth-child(2):before{
+    background-position: -130px 0;
+}
+
+.footer .top li:nth-child(3):before{
+    background-position: -65px 0;
+}
+
+.footer .bottom{
+    padding-top: 40px;
+    color: #999;
+    font-size: 14px;
+    text-align: center;
+}
+
+.footer .bottom a{
+    color: #999;
+}
+

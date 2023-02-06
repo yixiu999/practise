@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        a{
+            text-decoration: none;
+        }
+
+        .nav{
+            width: 300px;
+            height: 40px;
+            margin: 100px auto;
+        }
+
+        .nav li{
+            position: relative;
+            float: left;
+            width: 100px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            /* 开启3d模式 */
+            transform-style: preserve-3d;
+            transition: all 1s;
+            
+
+            /* 旋转：方便观察立体盒子 */
+            /* transform: rotateX(-20deg) rotateY(30deg); */
+        }
+
+        .nav li a{
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: block;
+            width: 100%;
+            height: 100%;
+            color: white;
+        }
+
+        .nav a:first-child{
+            background-color: green;
+            transform: translateZ(20px);
+        }
+
+        .nav a:last-child{
+            background-color: orange;
+            transform: translateY(-20px) rotateX(90deg);
+            /* 注意：盒子先旋转的话，坐标轴也会随着转，盒子平面的前方就是Z轴，
+                所有如果先旋转的写法是：rotateX(90deg) translateZ(20px) */
+            /* 还有为什么是20px，因为盒子躺倒之后是居中的，只需移动20px就行 */
+        }
+
+        .nav li:hover{
+            transform: rotateX(-90deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <ul>
+            <li>
+                <a href="#">首页</a>
+                <a href="#">Index</a>
+            </li>
+            <li>
+                <a href="#">登录</a>
+                <a href="#">Login</a>
+            </li>
+            <li>
+                <a href="#">注册</a>
+                <a href="#">Register</a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

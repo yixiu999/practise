@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="iconfont/iconfont.css">
+    <style>
+    .box{
+        margin: 100px auto;
+        width: 300px;
+        border-bottom: 2px solid #ccc;
+    }
+    
+    #pwd{
+        width: 270px;
+        /* 输入时不显示输入边框 */
+        outline: none;  
+        border: none;
+    }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <input type="password" id="pwd">
+        <span class="iconfont icon-hide" id="eye"></span>
+        <!-- <img src="image/icon.jpg" alt="" id="eye"> -->
+    </div>
+    <script>
+        // 点击按钮将密码框切换为文本框，并可以查看密码钥文
+        var pwd = document.getElementById('pwd');
+        var eye = document.getElementById('eye');
+        // 利用flag来判断眼睛状态，用if else转换眼睛状态
+        var flag = 0;
+        eye.onclick = function(){
+            if(flag == 0){
+                pwd.type = 'text';
+                eye.class = 'iconfont icon-browse';
+                // eye.disabled = true;
+                flag = 1;
+            }else{
+                pwd.type = 'password';
+                eye.class = 'iconfont icon-hide';
+                // eye.src = 'image/icon.jpg';
+                // 用图片也可以，用字体图标也可以
+                flag = 0;
+            }
+        }
+    </script>
+    
+</body>
+</html>

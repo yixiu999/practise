@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            margin: 100px auto;
+            width: 600px;
+        }
+
+        .mess{
+            display: none;
+            padding-left: 20px;
+            /* background:color image repeat position/size; */
+            background: url(image/mess.png) no-repeat left center;
+            color: #999;
+            font-size: 12px;
+        }
+
+        .wrong{
+            display: inline-block;
+            color: red;
+            background-image: url(image/wrong.png);
+        }
+
+        .right{
+            display: inline-block;
+            background-image: url(image/right.png);
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input type="password" class="pwd">
+        <p class="mess">6-16位（字母、数字、符号），区分大小写</p>
+    </div>
+
+    <script>
+        // 首先判断的事件是表单失去焦点 onblur
+        // 如果输入正确则提示正确的信息颜色为绿色小图标变化
+        // 如果输入不是6到16位，则提示错误信息颜色为红色 小图标变化
+        // 因为里面变化样式较多，我们采取className修改样式
+        // 得到焦点时，显示提示信息
+        var pwd = document.querySelector('.pwd');
+        var mess = document.querySelector('.mess');
+        // 获得焦点，提示密码设定规则，将.mess类display改成inline-block
+        pwd.onclick = function() {
+            mess.style.display = 'inline-block';
+        }
+
+        // 失去焦点时要判断
+        pwd.onblur = function() {
+            // 如果密码长度不为零（用户有输入），且大于16或者小于6，则不符合命名规则，提示错误信息颜色为红色，小图标改变
+            if(this.value.length > 0 && this.value.length < 6 || this.value.length > 16){
+                mess.className = 'mess wrong';
+                mess.innerHTML = '密码较短或较长，仅支持6-16个字符';
+            }else if(this.value.length >= 6 && this.value.length <= 16){
+                // 如果密码长度在6到16的范围，则提示符合规则，小图标改变
+                mess.className = 'mess right';
+                mess.innerHTML = '符合规则';
+            }else if(this.value === ''){
+                // 如果用户没输入（密码长度为0），则失去焦点时隐藏提示信息
+                mess.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

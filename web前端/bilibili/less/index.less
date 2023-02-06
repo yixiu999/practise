@@ -1,0 +1,163 @@
+@import './base.less';
+
+
+@vw:3.75vw;
+
+// 1、头部 固定
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: (84 / @vw);
+    background-color: #fff;
+    
+
+    .top{
+        display: flex;
+        justify-content: space-between;
+        height: (44 / @vw);
+        padding-left: (18 / @vw);
+        padding-right: (12 / @vw);
+        line-height:  (44 / @vw);
+
+        .left{
+            
+            .iconfont{
+                font-size: 7vw;
+                color: #fb7299;
+            }
+        }
+
+        .right{
+            display: flex;
+
+            .iconfont{
+                font-size: (22 / @vw);
+                color: #ccc;
+            }
+
+            .login{
+                width: (24 / @vw);
+                height: (24 / @vw);
+                margin-left: (24 / @vw);
+            }
+
+            .download{
+                width: (74 / @vw);
+                height: (24 / @vw);
+                margin-left: (24 / @vw);
+            }
+            
+        }
+    }
+
+    .bottom{
+        display: flex;
+        justify-content: space-between;
+        height: (40 / @vw);
+        border-bottom: 1px solid #eee;
+        
+
+        .nav{
+           ul{
+            display: flex;
+
+            li{
+                padding: 0 (16 / @vw);
+
+                a{
+                    display: block;
+                    // 边框2px+内容高度38px=a的高度40px
+                    height: (38 / @vw);
+                    font-size: (14 / @vw);
+                    line-height: (38 / @vw);
+
+                    &.current{
+                        color: #fb7299;
+                        border-bottom: 2px solid #fb7299;
+                    }
+                }
+            }
+           }
+
+        }
+
+        .more a{
+            display: block;
+            width: (40 / @vw);
+            height: (40 / @vw);
+            line-height: (40 / @vw);
+            text-align: center;
+            color: #ccc;
+
+            i.iconfont{
+                font-size: (22 /@vw);
+            }
+        }
+    }
+}
+
+// 视频内容区域
+.main{
+    padding: (84 / @vw) (5 / @vw) 0;
+
+    .list{
+        display: flex;
+        flex-wrap: wrap;
+
+        a{
+            width: 50%;
+            padding: (8 / @vw) (5 / @vw);
+            
+            font-size: (12 / @vw);
+
+            .pic{
+                position: relative;
+                .mask{
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+
+                    display: flex;
+                    justify-content: space-between;
+                    width: 100%;
+                    padding: (8 / @vw);
+                    background-image: 
+                    linear-gradient(
+                        to top,
+                        rgba(0, 0, 0, 0.6),
+                        rgba(0, 0, 0, 0));
+                    color: #fff;
+                }
+            }
+
+            .txt{
+                margin-top: (5 / @vw);
+            }
+        }
+    }
+}
+
+
+// 底部 固定
+.btn{
+    position: fixed;
+    left: 0;
+    bottom: (30 / @vw);
+    width: 100%;
+    // height: (12 / @vw);
+    padding: (12 / @vw);
+
+    a{
+        display: block;
+        height: (36 / @vw);
+        border-radius: (18 / @vw);
+        background-color: #fb7299;
+        text-align: center;
+        line-height: (36 / @vw);
+        color: #fff;
+        font-size: (14 / @vw);
+    }
+}

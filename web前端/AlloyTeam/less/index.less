@@ -1,0 +1,53 @@
+
+// 轮播图
+.carousel{
+    // 如果视口<768，图250
+    // 如果视口<992，图400
+    // 如果视口>992，图500
+
+
+    img{
+        height: 100%!important;
+    }
+
+    @media (max-width:992px) {
+        .item{
+            height: 400px;
+        }
+    }
+
+    @media (max-width:768px) {
+        .item{
+            height: 250px;
+        }
+    }
+
+    @media (min-width:992px) {
+        .item{
+            height: 500px;
+        }
+    }
+}
+
+
+// 头部
+.navbar-default {
+    background-color: transparent;
+    border: none;
+}
+
+
+// 开源项目
+.project{
+    text-align: center;
+
+    h2{
+        margin-top: 50px;
+    }
+
+    a{
+        display: block;
+        height: 200px;
+        background-color: pink;
+    }
+}

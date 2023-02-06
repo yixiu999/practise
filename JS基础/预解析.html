@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 案例1
+        // var num = 10;
+        // fun();
+        // function fun(){
+        //     console.log(num);
+        //     var num = 20;
+        // }
+
+        // 相当于执行了以下操作
+        // var num; //变量提升
+        // function fun(){  //函数提升
+        //     var num;  //函数内部变量提升
+        //     console.log(num);  //就近原则，找到函数内部的num，打印出来为undefined
+        //     num = 20;
+        // }
+        // num = 10;
+        // fun();
+
+
+
+
+
+        // 案例2
+        // var num = 10;
+        // function fn(){
+        //     console.log(num);
+        //     var num = 20;
+        //     console.log(num);
+        // }
+        // fn();
+
+        // 相当于执行了以下操作
+        // var num;
+        // function fn(){
+        //     var num;
+        //     console.log(num); //输出为undefined
+        //     num = 20;
+        //     console.log(num); //输出为20
+        // }
+        // num = 10;
+        // fn();
+
+
+
+
+
+        // 案例3
+        // var a = 18;
+        // f1();
+        // function f1() {
+        //     var b = 9;
+        //     console.log(a);
+        //     console.log(b);
+        //     var a = '123';
+        // }
+
+        // 预解析
+        // var a;
+        // function f1() {
+        //     var b;
+        //     var a;
+        //     b = 9;
+        //     console.log(a); //输出为undefined
+        //     console.log(b); //输出9
+        //     a = '123';
+        // }
+        // a = 18;
+        // f1();
+
+
+
+
+
+        // 案例4
+        f1();
+        console.log(c);
+        console.log(b);
+        console.log(a);
+        function f1() {
+            var a = b = c = 9;
+            console.log(a);
+            console.log(b);
+            console.log(c);
+        }
+
+        // 预解析
+        function f1() {
+            var a = 9; //这里的a是局部变量
+            b = 9; 
+            c = 9;
+            // 这里的声明解析为：var a = 9; b = 9; c = 9; b、c没有声明，是全局变量
+            // 与集体声明不同，集体声明格式为：var a = 9, b = 9, c = 9;集体声明的格式是逗号隔开
+            console.log(a); //输出9
+            console.log(b); //输出9
+            console.log(c); //输出9
+        }
+        f1();
+        console.log(c); //输出9
+        console.log(b); //输出9
+        console.log(a); //没有声明全局变量的a，这里报错
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

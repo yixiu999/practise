@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 利用函数计算1-100之间的累加和
+        // function getSum(num1,num2) {
+        //     var sum = 0;
+        //     for(var i = num1; i <= num2; i++){
+        //         sum += i;
+        //     }
+        //     return sum;
+        // }
+        // console.log(getSum(2,6));
+
+
+        // 用arguments函数求最大值
+        function getMax(){
+            var max = arguments[0];
+            for(i = 1; i < arguments.length; i++){
+                if( arguments[i] > max){
+                    max = arguments[i];
+                }
+            }
+            return max;
+        }
+
+        console.log(getMax(2,5,6,12,3));
+
+
+        // 利用函数封装方式，翻转任意数组    翻转：reverse
+        function reverse(arr) {
+            var newArr = [];  //先定义一个新数组
+            for(j = 1; j <= arr.length; j++){  //把arr数组最后一位放在newArr第0位，循环arr.length次
+                newArr[newArr.length] = arr[arr.length - j];
+            }
+            return newArr;
+        }
+        var arr1 = reverse([2,5,8,3,4]);
+        console.log(arr1);
+
+
+
+        // 冒泡排序函数（从小到大排序）
+        function sort(arr){
+            // 两层循环，外层循环arr.length-1次
+            for(a = 1; a < arr.length; a++){
+                // 里层第一次循环是循环arr.length-1次，后面每循环一次减少一次
+                for(b = 0; b < arr.length - a; b++){
+                    if(arr[b] > arr[b + 1]){
+                        var temp = arr[b];
+                        arr[b] = arr[b + 1];
+                        arr[b + 1] = temp;
+                    }
+                }
+            }
+            return arr;
+        }
+        var arr2 = sort([8,2,4,3]);
+        console.log(arr2);
+
+
+        // 判断是否闰年函数
+        function isRunNian(year){
+            var flag = false;
+            if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0){
+                flag = true;
+            }
+            return flag;
+        }
+        console.log(isRunNian(1999));
+        console.log(isRunNian(2000));
+
+
+        // 输入一个年份，判断当年2月份的天数
+        function backDay() {
+            var year = prompt('请输入一个年份：');
+            if(isRunNian(year)){
+                alert('这一年有29天');
+            }else{
+                alert('这一年有28天');
+            }
+            
+        }
+        backDay();
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

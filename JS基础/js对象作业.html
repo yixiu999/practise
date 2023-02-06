@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 创建一个电脑对象，该对象要有颜色、重量、品牌、型号，可以看电影、听音乐、打游戏和敲代码
+        // var thisComputer = {
+        //     color:'黑色',
+        //     weight:5,
+        //     brand:'black',  //品牌brand
+        //     type:'111',
+        //     watchfilm:function() {
+        //         console.log('看电影');
+        //     },
+        //     game:function() {
+        //         console.log('打游戏')
+        //     },
+        //     listenmusic:function() {
+        //         console.log('听音乐');
+        //     },
+        //     code:function() {
+        //         console.log('敲代码ing');
+        //     }
+        // }
+
+
+        // // 创建一个按钮对象，该对象需要包含宽、高、背景颜色和点击行为
+        // var button = new Object();
+        // button.width = 100;
+        // button.height = 100;
+        // button.color = 'skyblue';
+        // button.click = function(){
+        //     console.log('点击');
+        // }
+
+
+
+        // // 创建一个车的对象，该对象要有重量、颜色、牌子，可以载人、拉货和耕田
+        // function Car(weight,color,brand){
+        //     this.weight = weight;
+        //     this.color = color;
+        //     // ...大概就这样，不想写了，做下一个
+        // }
+
+
+        // 写一个函数，实现反转任意数组
+        // function reverse(arr){
+        //     var newArr = [];
+        //     for(i = 1; i <= arr.length; i++){
+        //         newArr[newArr.length] = arr[arr.length - i];
+        //     }
+        //     return newArr;  //函数一定要记得return！！！
+        // }
+        // var arr1 = reverse([1,2,5,6,3]);
+        // console.log(arr1);
+
+
+
+        // 写一个函数，实现对数字数组的排序
+        function sort(arr){
+            // 两层循环，外层循环是循环趟数，一共需要循环数组length-1次
+            for(j = 1; j < arr.length; j++){
+                // 内层循环是循环次数，两两比较，第一次循环是循环arr.length-1次，循环完可以比较出一个最大的数
+                // 后面次数每循环一躺少一次
+                for(k = 0; k < arr.length - j; k++){  //这里注意k小于的是数组长度-趟数！！！
+                    if(arr[k] > arr[k + 1]){
+                        var temp = arr[k];
+                        arr[k] = arr[k + 1];
+                        arr[k + 1] = temp;
+                    }
+                }
+            }
+            return arr;
+        }
+        var arr2 = sort([2,35,2,5,4,1]);
+        console.log(arr2);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

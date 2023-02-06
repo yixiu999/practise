@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 600px;
+            height: 112px;
+            margin: 100px auto;
+            border: 5px solid black;
+            overflow: hidden;
+        }
+
+        img{
+            width: 200px;
+        }
+
+        ul{
+            padding: 0;
+            margin: 0;
+            width: 2000px;
+            animation: move 5s infinite linear;
+        }
+
+        li{
+            float: left;
+            list-style: none;
+        }
+
+        /* 怎么才能move？？？？？ */
+        /* 用平面位移移动ul */
+        @keyframes move{
+            to{
+                transform: translateX(-1400px);
+            }
+        }
+
+        ul:hover{
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <ul>
+            <li><img src="./images/走马灯/1.jpg" alt=""></li>
+            <li><img src="./images/走马灯/2.jpg" alt=""></li>
+            <li><img src="./images/走马灯/3.jpg" alt=""></li>
+            <li><img src="./images/走马灯/4.jpg" alt=""></li>
+            <li><img src="./images/走马灯/5.jpg" alt=""></li>
+            <li><img src="./images/走马灯/6.jpg" alt=""></li>
+            <li><img src="./images/走马灯/7.jpg" alt=""></li>
+
+            <!-- 让轮播更自然，第567图移动的时候，不能有留白 -->
+            <li><img src="./images/走马灯/1.jpg" alt=""></li>
+            <li><img src="./images/走马灯/2.jpg" alt=""></li>
+            <li><img src="./images/走马灯/3.jpg" alt=""></li>
+        </ul>
+    </div>
+</body>
+</html>

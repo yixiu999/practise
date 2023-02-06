@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    height: 100%;
+}
+
+body{
+    height: 100%;
+    background: url(./images/f1_1.jpg) no-repeat center 0;
+
+    /* bg-size:contain是等比例缩放 */
+    /* 要铺满整个背景要设置盒子高度为100%，同时要设置html高度为100% */
+    background-size: cover;
+}
+
+/* 云朵定位 */
+.clouds{
+    position: absolute;
+    left: 50%;
+    top: 0;
+}
+
+.clouds img:nth-child(1){
+    position: absolute;
+    left: -300px;
+    top: 20px;
+    /* 动画设置为无限循环、反向运动 */
+    /* alternate属性会让动画在2、4、6次反向运动，1、3、5正常运动 */
+    animation: cloud 1s infinite alternate;
+}
+
+.clouds img:nth-child(2){
+    position: absolute;
+    left: 400px;
+    top: 100px;
+    animation: cloud 1s 0.2s infinite alternate;
+}
+
+.clouds img:nth-child(3){
+    position: absolute;
+    left: -500px;
+    top: 200px;
+    animation: cloud 1s 0.4s infinite alternate;
+}
+
+/* 定义云朵动画 */
+@keyframes cloud{
+    to{
+        transform: translateX(20px);
+    }
+}

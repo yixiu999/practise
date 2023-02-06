@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .box{
+            position: relative;
+            width: 200px;
+            margin: 100px auto;
+        }
+        .big{
+            display: none;
+            position: absolute;
+            top: -40px;
+            left: 0;
+            width: 180px;
+            height: 20px;   
+            padding: 5px 0;
+            font-size: 18px;
+            border: 1px solid rgb(0,0,0,.2);
+            box-shadow: 0 2px 4px rgb(0,0,0,.2);
+            color: #333;
+        }
+        .big::before{
+            content: '';
+            width: 0;
+            height: 0;
+            position: absolute;
+            top: 28px;
+            left: 18px;
+            border: 8px solid transparent;
+            border-top: 8px solid #fff;
+        }
+
+        /* .triangle{
+            position: absolute;
+            left: 5px;
+            top: 18px;
+            border: 5px solid transparent;
+            border-top: 5px solid #000;
+        } */
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="big"></div>
+        <input type="text" name="" class="text" placeholder="请输入您的快递单号">
+    </div>
+
+    <script>
+        var text = document.querySelector('.text');
+        var big = document.querySelector('.big');
+        // 这里为什么用keyup事件
+        // 用keypress事件的话，识别不了功能键，例如删除就识别不了，不能同步
+        // 用keydown事件的话，同步会延迟一个字符，键盘按下的时候触发事件，字符还没有落入表单，keypress事件也是
+        text.addEventListener('keyup', function() {
+            if(this.value != ''){
+                big.style.display = 'block';
+                big.innerHTML = this.value;
+            }else {
+                big.style.display = 'none';
+            }
+        })
+
+
+        // 当失去焦点，就隐藏big盒子
+        text.addEventListener('blur',function() {
+            big.style.display = 'none';
+        })
+
+        // 当获得焦点，显示big盒子
+        text.addEventListener('focus',function() {
+            if(this.value != '') {
+                big.style.display = 'block';
+            }
+        })
+    </script>
+</body>
+</html>

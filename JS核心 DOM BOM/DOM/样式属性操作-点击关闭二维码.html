@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .box{
+        margin: 100px auto;
+        width: 300px;
+        height: 300px;
+    }
+    #code{
+        position: absolute;
+        display: block;
+    }
+    #close{
+        position: relative;
+        top: 0;
+        left: -16px;
+        border: 1px solid #000;
+    }
+
+    </style>
+</head>
+<body>
+    <!-- 样式属性操作 案例：当鼠标点击二维码关闭按钮的时候，则关闭整个二维码 -->
+    <!-- 核心思路：利用样式的显示和隐藏完成，display:none隐藏元素，display:block显示元素 -->
+    <div class="box">
+        <span id="close">x</span>
+        <img src="image/logo.gif" alt="" id="code">
+    </div>
+
+    <script>
+        // 1、获取元素
+        var code = document.getElementById('code');
+        var close = document.getElementById('close');
+        // 2、注册事件  程序处理
+        close.onclick = function() {
+            code.style.display = 'none';
+        }
+    </script>
+</body>
+</html>

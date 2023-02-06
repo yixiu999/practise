@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var num1 = prompt('请输入第一个数：');
+        var num2 = prompt('请输入第二个数：');
+        // 1、写入一个函数，用户输入任意两个数字的任意算术运算，并能弹出运算后的结果
+        function getSum(num1,num2) {
+            return parseFloat(num1) + parseFloat(num2);
+        }
+        alert('和为：' + getSum(num1,num2));
+        // 2、写一个函数，用户输入任意两个数字的最大值，并能弹出运算后的结果
+        function getMax(num1,num2) {
+            return num1 > num2 ? num1 : num2;
+        }
+        alert('其中较大值为：' + getMax(num1,num2));
+
+        // 3、写一个函数，用户输入任意三个数字的最大值，并能弹出运算后的结果
+        var num3 = prompt('请输入第三个数：');
+        function getMoreMax(num1,num2,num3) {
+            if(num1>num2){
+                return num1>num3?num1:num3;
+            }else{
+                return num2>num3?num2:num3;
+            }
+        }
+        alert('三个值中最大值为：' + getMoreMax(num1,num2,num3));
+
+
+        // 4、写一个函数，用户输入一个数判断是否是素数（质数，只能被1和自身整除的数），并能弹出运算后的结果
+        do{
+            var num4 = parseFloat(prompt('请输入一个数判断是否是素数：'));
+            function getSushu(num4) {
+                // 判断小数
+                var result = (num4.toString()).indexOf('.');
+                if(result != -1){return '不是素数';}
+                // 判断是否大于0
+                if(num4 <= 0){return '不是素数';}
+                // 1，2，3都是质数
+                if(num4 >= 1 && num4 <= 3){
+                    return '是素数';
+                }
+                if(num4 > 3){
+                    for( var i = 2; i < num4; i++){
+                    if( num4 % i === 0){
+                        return '不是素数';
+                    }
+                    }
+                    if(i == num4){return '是素数';}
+                }
+            }
+        alert(num4 + getSushu(num4));
+        var act = prompt('动作：');
+        }while(act == 0);
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

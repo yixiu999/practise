@@ -1,0 +1,257 @@
+body{
+    background-color: #f7f7f8;
+}
+
+.red{
+    color: #cf4444;
+}
+
+.panel {
+    margin-bottom: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+/* 主体内容：滑动显示 */
+.main{
+    padding: 12px 11px 80px;
+}
+
+/* 用户信息 */
+.main .user_msg{
+    display: flex;
+    align-items: center;
+    padding: 15px 0 15px 11px;
+}
+
+/* 定位图标样式 */
+.main .user_msg .location a{
+    display: block;
+    width: 30px;
+	height: 30px;
+	background-image: linear-gradient(90deg, 
+		#6fc2aa 5%, 
+		#54b196 100%);
+    border-radius: 30px;
+    text-align: center;
+    line-height: 30px;
+    color: #fff;
+}
+
+/* 用户信息样式 */
+.main .user_msg .msg{
+    flex: 1;
+    margin-left: 12px;
+}
+
+.main .user_msg .top{
+    display: flex;
+}
+
+.main .user_msg .top h5{
+    width: 55px;
+    font-weight: 400;
+    font-size: 15px;
+    color: #262626;
+}
+
+.main .user_msg .top span{
+    font-size: 13px;
+    color: #333333;
+}
+
+.main .user_msg .bottom{
+    margin-top: 10px;
+    color: #333;
+    font-size: 12px;
+}
+
+/* 右边箭头 */
+.main .user_msg .more a{
+    display: block;
+    width: 44px;
+	height: 44px;
+    text-align: center;
+    line-height: 44px;
+    color: #808080;
+}
+/* 用户信息 */
+
+/* 商品内容 */
+.main .goods{
+    display: flex;
+    padding: 11px 0px 11px 11px;
+}
+
+/* 商品图片 */
+.goods .pic{
+    margin-right: 12px;
+}
+
+.goods .pic img{
+    width: 85px;
+    height: 85px;
+}
+
+/* 商品信息 */
+.main .goods .info{
+    /* flex伸缩比设置为1，只占盒子的剩余部分 */
+    flex: 1;
+}
+
+.main .goods .info h5{
+    font-size: 13px;
+    font-weight: 400;
+    color: #262626;
+}
+
+.main .goods .info p{
+    font-size: 11px;
+    color: #888888;
+}
+
+.main .goods .price {
+    font-size: 9px;
+}
+
+.main .goods .price span:nth-child(1) i{
+    font-size: 16px;
+}
+
+.main .goods .price span:nth-child(2){
+    margin-left: 12px;
+    color: #999;
+    text-decoration: line-through;
+}
+
+/* 数量可点击，设置44*44的框放置，方便用户点击 */
+.main .goods .qty{
+    width: 44px;
+    height: 44px;
+    line-height: 44px;
+    text-align: center;
+    font-size: 15px;
+}
+/* 商品内容 */
+
+
+/* 快递等其余信息 */
+.rest{
+    padding: 14px 15px 16px 13px;
+    font-size: 13px;
+    color: #262626;
+}
+
+.rest .express{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.rest .express h5,
+.rest .express span{
+    font-size: 13px;
+}
+
+.rest .express h5{
+    font-weight: 400;
+}
+
+.rest .notes{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.rest .notes p{
+    margin-right: 19px;
+}
+
+.rest .notes span{
+    font-size: 12px;
+    color: #989898;
+}
+
+.rest .payment{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rest .payment a span:nth-child(2){
+    /* display: inline-block; */
+    width: 7px;
+    height: 11px;
+    color: #808080;
+}
+
+/* 快递等其余信息 */
+
+
+/* 价格总计部分 */
+.total{
+    padding: 14px 16px 16px 13px ;
+    font-size: 13px;
+    color: #262626;
+}
+
+.total .count,
+.total .transport,
+.total .discount{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.total .discount{
+    margin-bottom: 0;
+}
+
+
+
+/* 价格总计部分 */
+
+/* 主体内容：滑动显示 */
+
+
+/* 底部支付：固定定位 */
+.pay{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    /* 使用flex布局 */
+    display: flex;
+    justify-content: space-between;
+    /* align-items让盒子垂直居中显示 */
+    align-items: center;
+    padding: 0 10px;
+
+    background-color: #fff;
+    width: 100%;
+    height: 80px;
+    border: 1px solid #ededed;
+}
+
+.pay .left{
+    font-size: 12px;
+}
+
+.pay .left i{
+    font-size: 20px;
+}
+
+.pay .right a{
+    display: block;
+    width: 90px;
+    height: 35px;
+    background-image: linear-gradient(90deg, 
+		#6fc2aa 5%, 
+		#54b196 100%);
+	border-radius: 3px;
+    text-align: center;
+    line-height: 35px;
+    font-size: 14px;
+    color: #fff;
+}
+/* 底部支付：固定定位 */

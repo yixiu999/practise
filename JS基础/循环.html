@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // for循环案例：求学生成绩
+        // 要求用户输入班级人数，之后依次输入每个学生的成绩，最后打印除该班级的总成绩以及平均成绩
+        // var num = prompt('请输入班级总人数：');
+        // var count = 0;
+        // for (var i = 1; i <= num; i++) {
+        //     var score = prompt('请输入第' + i + '个学生的成绩：');
+        //     count += parseFloat(score);
+        // }
+        // average = count / num;
+        // alert('该班级的总成绩是：' + count);
+        // alert('该班级的平均成绩是：' + average);
+
+
+
+        // 双重for循环：打印五行五列星星
+        var str = '';
+        for (var i = 1; i <= 5; i++) { //外层循环负责打印五行
+            for (var j = 1; j <= 5; j++) { //里层循环负责打印五颗星星
+                str += '💗';
+            }
+            str += '\n';
+        }
+        console.log(str);
+
+
+
+        // 打印正三角形，第一行一个心，一直到第十行十个心
+        var str = '';
+        for (var i = 1; i <= 10; i++) {
+            for (var j = 1; j <= i; j++) { //打印倒三角形时，这里改为 j = i; j <= 10;j++
+                str += '💗';
+            }
+            str += '\n';
+        }
+        console.log(str);
+
+
+
+        // 打印九九乘法表
+        var str = '';
+        var sum = 0;
+        for (var i = 1; i <= 9; i++) {
+            for (var j = 1; j <= i; j++) { //每行的公式个数正好等于行数
+                sum = i * j;
+                str += j + '*' + i + '=' + sum + '\t';
+            }
+            str += '\n';
+        }
+        console.log(str);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

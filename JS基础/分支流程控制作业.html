@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 1、判断时间阶段。比如用户输入12点弹出中午好，18点傍晚好，23点深夜好
+        // var time = prompt('请输入当前时间');
+        // console.log(time);
+        // console.log(parseFloat(time));
+        // if (parseFloat(time) > 12) {
+        //     alert('中午好~');
+        // } else if (time > 18) {
+        //     alert('傍晚好~');
+        // } else if (time > 23) {
+        //     alert('深夜好~');
+        // }
+
+
+        // 2、比较两个数的最大值（用户依次输入两个值，然后弹出最大值）
+        var num1 = prompt('请输入第一个值：');
+        var num2 = prompt('请输入第二个值：');
+        var max = num1 > num2 ? num1 : num2;
+        alert(max);
+
+
+        // 3、用户输入一个数，来判断是奇数还是偶数
+        var num = prompt('请输入一个数：');
+        if (num % 2 == 0) {
+            alert('这是一个偶数');
+        } else {
+            alert('这是一个奇数');
+        }
+
+        // 5、接收班长口袋里的钱数，若大于等于2000，请大家吃西餐；若小于2000，大于等于1500，请大家吃快餐；
+        // 若小于1500，大于等于1000，请大家喝饮料；若小于1000，大于等于500，请大家吃棒棒糖。否则提醒班长下次把钱带够。
+        var money = prompt('班长带了多少钱？');
+        if (money > 2000) {
+            alert('可以请大家吃西餐！');
+        } else if (money >= 1500) {
+            alert('可以请大家吃快餐！');
+        } else if (money >= 1000) {
+            alert('可以请大家喝饮料！');
+        } else if (money >= 500) {
+            alert('可以请大家吃棒棒糖！');
+        } else {
+            alert('下次带够钱！');
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

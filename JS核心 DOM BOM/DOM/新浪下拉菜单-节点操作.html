@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .nav{
+            width: 300px;
+            margin: 100px auto;
+        }
+        .nav>li{
+            float: left;
+        }
+        a{
+            display: inline-block;
+            width: 100px;
+            height: 40px;
+            text-decoration: none;
+            color: #000;
+            text-align: center;
+            line-height: 40px;
+        }
+        li{
+            list-style: none;
+        }
+        .nav>li>a:hover{
+            background-color: #c0c0c0;
+        }
+
+        .nav>li>ul>li>a{
+            box-sizing: border-box;
+            border: 1px solid orange;
+        }
+
+        .nav ul li a:hover{
+            background-color: #fff5da;
+        }
+        .nav ul{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <ul class="nav">
+        <li>
+            <a href="#">微博</a>
+            <ul>
+                <li>
+                    <a href="#">私信</a>
+                </li>
+                <li>
+                    <a href="#">评论</a>
+                </li>
+                <li>
+                    <a href="#">@我</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">微博</a>
+            <ul>
+                <li>
+                    <a href="#">私信</a>
+                </li>
+                <li>
+                    <a href="#">评论</a>
+                </li>
+                <li>
+                    <a href="#">@我</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">微博</a>
+            <ul>
+                <li>
+                    <a href="#">私信</a>
+                </li>
+                <li>
+                    <a href="#">评论</a>
+                </li>
+                <li>
+                    <a href="#">@我</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+    <script>
+        // 这里实现鼠标悬浮时显示下拉菜单，移开时隐藏下拉菜单
+        // 先获取元素
+        var nav = document.querySelector('.nav');
+        var lis = nav.children;
+
+        // 循坏给每个ul注册事件
+        for(var i = 0; i < lis.length; i++){
+            lis[i].onmouseover = function() {
+                // lis里面的ul的display设置为block，ul是li的第二个孩子
+                this.children[1].style.display = 'block';
+            }
+
+            lis[i].onmouseout = function() {
+                this.children[1].style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

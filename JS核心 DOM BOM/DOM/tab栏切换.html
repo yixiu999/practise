@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .box{
+            width: 500px;
+            margin: 100px auto;
+        }
+        .tb_head{
+            height: 35px;
+            background-color: #ccc;
+            border-bottom: 1px solid red;
+        }
+        li{
+            list-style: none;
+            float: left;
+            padding: 0 20px 0;
+            line-height: 35px;
+        }
+        .current{
+            background-color: red;
+            color: #fff;
+        }
+        #item{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="tb_head">
+            <ul>
+                <li class="current">商品介绍</li>
+                <li>规格与包装</li>
+                <li>售后保障</li>
+                <li>商品评价</li>
+            </ul>
+        </div>
+        <div class="tb_body">
+            <div id="item" style="display: block;">商品介绍模板内容</div>
+            <div id="item">规格与包装模板内容</div>
+            <div id="item">售后保障模板内容</div>
+            <div id="item">商品评价模板内容</div>
+        </div>
+    </div>
+
+    <script>
+        // 先获得li集合,给每个li设置点击事件
+        var tb_head = document.querySelector('.tb_head');
+        var lis = tb_head.querySelectorAll('li');
+        var items = document.querySelectorAll('#item');
+        // var lis =document.querySelectorAll('li');
+
+        // for循环绑定点击事件
+        for(var i = 0; i < lis.length; i++){
+            // 设置模块内容对应的索引号index
+            lis[i].setAttribute('index',i);
+
+            lis[i].onclick = function() {
+                // 排他：清除掉所有的li的背景颜色样式，再设置点击的这个li的样式
+                for( var i = 0; i < lis.length; i++) {
+                    lis[i].className = '';
+                    items[i].style.display = 'none';
+                }
+                this.className = 'current';
+
+                // 点第一个按钮显示第一个模块内容，这里不知道如何对应第几个内容，所以这里需要知道索引号来对应li
+                // 设置下面模块内容，先给所有li设置自定义index
+                // 获取对应的索引号对应模块内容
+                var index = this.getAttribute('index');
+                items[index].style.display = 'block';
+
+
+                // 关于这里为什么一定要索引号，不能直接用i：
+                // console.log(i);
+                // 这里的i可以看一下log，点击任意一个按钮都是输出4，
+                // 这里的i是点击事件构造函数里面的for循环的i，作用域只在这个函数里，由于作用域也无法获取到外层循环的i
+                
+            }
+        }
+    </script>
+</body>
+</html>

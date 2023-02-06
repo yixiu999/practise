@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .box{
+            width: 300px;
+            margin: 100px auto;
+        }
+        table{
+            width: 300px;
+            border-collapse: collapse;
+        }
+        th{
+            background-color: #09c;
+            color: white;
+        }
+        th,td{
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        tbody tr{
+            background-color: #f0f0f0;
+            color: #404060;
+        }
+        tbody td{
+            height: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <table>
+            <caption>
+                <tr>
+                    <th>
+                        <input type="checkbox" id="all">
+                    </th>
+                    <th>商品</th>
+                    <th>价钱</th>
+                </tr>
+            </caption>
+            <tbody>
+                <tr>
+                    <td><input type="checkbox" id="checkbox"></td>
+                    <td>iphone8</td>
+                    <td>8000</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" id="checkbox"></td>
+                    <td>iPad Pro</td>
+                    <td>5000</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" id="checkbox"></td>
+                    <td>iPad Air</td>
+                    <td>2000</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" id="checkbox"></td>
+                    <td>Apple Watch</td>
+                    <td>2000</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <script>
+        var all = document.querySelector('#all');
+        var checkboxs = document.querySelectorAll('#checkbox');
+        // 全选框选定时，下面的多选框都会选上，等于全选框的状态就是下面多选框的状态
+        all.onclick = function() {
+            for(var i = 0; i < checkboxs.length; i ++){
+                    checkboxs[i].checked = this.checked;
+            }
+        }
+
+        // 先给每一个checkbox添加点击事件，每点击一下循环判断一下
+        // 添加一个计数器来判断(每一个循环都判断一下）已选的多选框是否大于4
+        var count = 0;
+        for(var i = 0; i < checkboxs.length; i++){
+            checkboxs[i].onclick = function() {
+                // 每次点击都用计数器循环检查四个小按钮是否被选
+                var count = 0;
+                for(var i = 0; i < checkboxs.length; i++){
+                    if(checkboxs[i].checked == true){
+                        count++;
+                        console.log(count);
+                    }
+                    // console.log(count);
+                    count == 4 ? all.checked = true : all.checked = false;
+                }
+            }
+        }
+    </script>
+</body>
+</html>

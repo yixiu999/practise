@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 欢迎使用简易计算器
+        // 1、加法运算
+        // 2、减法运算
+        // 3、乘法运算
+        // 4、除法运算
+        // 5、退出
+        // 请输入您的选项
+        do{
+            var act = prompt('欢迎使用简易计算器\n1、加法运算\n2、减法运算\n3、乘法运算\n4、除法运算\n5、退出\n请输入您的选项');
+        switch (act) {
+            case '1':
+                var num1 = parseFloat(prompt('请输入一个数值：'));
+                var num2 = parseFloat(prompt('请输入一个数值：'));
+                alert(num1 + num2);
+                break;
+            case '2':
+                var num1 = parseFloat(prompt('请输入一个数值：'));
+                var num2 = parseFloat(prompt('请输入一个数值：'));
+                alert(num1 - num2);
+                break;
+            case '3':
+                var num1 = parseFloat(prompt('请输入一个数值：'));
+                var num2 = parseFloat(prompt('请输入一个数值：'));
+                alert(num1 * num2);
+                break;
+            case '4':
+                var num1 = parseFloat(prompt('请输入一个数值：'));
+                var num2 = parseFloat(prompt('请输入一个数值：'));
+                alert(num1 / num2);
+                break;
+        }
+        }while(act != '5')   //当选项没选5时继续执行
+        alert('您已退出！');
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

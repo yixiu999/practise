@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>早上好</div>
+    <!--如果有图片的话 <img src="image/a.img" alt=""> -->
+    <script>
+        // 根据系统不同时间来判断，显示不同问候语
+        // 根据系统不同时间来判断，所以需要用到日期内置对象
+        // 利用多分枝语句来设置不同的问候语
+        // 需要一个div元素，显示不同的问候语，修改元素内容即可
+        var div = document.querySelector('div');
+        // var img = document.querySelector('img');
+        var date = new Date();
+        var h = date.getHours();
+        if(h < 12){
+            div.innerText = '早上好';
+            // img.src = 'image/b.img'; 图片直接修改属性
+        }else if(h < 18){
+            div.innerText = '下午好';
+        }else{
+            div.innerText = '晚上好';
+        }
+    </script>
+</body>
+</html>

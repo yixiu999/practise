@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            height: 40px;
+            border: 1px solid #ccc;
+        }
+        ul{
+            list-style: none;
+            width: 1200px;
+            margin: 0 auto;
+        }
+        ul li{
+            /* float:left取消垂直列表格式，以水平方向显示 */
+            float: left;
+            /* 均匀分布成五份 */
+            width: 20%;
+            height: 40px;
+            box-sizing: border-box;/* 自动內减，使盒子不会被撑开 */
+            line-height: 40px;
+            border-right: 1px solid #ccc;
+            text-align: center;
+        }
+        ul .last{
+            border-right: none;
+        }
+        ul li a{
+            /* a标签默认是行内元素，宽高由内容撑开，并且无法设置宽高，此时默认情况用户只能点击文字区域才能调整 */
+            /* 如果把a标签转换成块级元素，此时可以设置宽高，会让a标签范围更大，用户可以点击调整的区域也越大 */
+            display: block;
+            /* 宽度不设置块元素会默认占满一行 */
+            height: 40px;
+            text-decoration: none;
+            color: black;
+        }
+
+        .app {
+            position:relative
+        }
+
+        .code{
+            width: 100px;
+            display: none;
+            position: absolute;
+            top: 41px;
+            left: 50%;
+            transform: translate(-50%);
+        }
+
+        li a:hover img{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <ul>
+            <li><a href="#">我要投资</a></li>
+            <li><a href="#">平台介绍</a></li>
+            <li><a href="#">新手专区</a></li>
+            <li><a href="#" class="app">手机微金所<img src="./image/ccc.jpg" alt="" class="code"></a></li>
+            <li class="last"><a href="#">个人中心</a></li>
+        </ul>
+    </div>
+</body>
+</html>

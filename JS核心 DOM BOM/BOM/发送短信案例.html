@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 点击按钮后，该按钮60秒之内不能再次点击，防止重复发送短信 -->
+    手机号码：<input type="number">
+    <button>发送</button>
+
+    <script>
+        var button = document.querySelector('button');
+        var time = 5;
+        button.addEventListener('click',function() {
+            // console.log(111);
+            // 点击按钮之后会禁用
+            this.disabled = true;
+            var time = 5;
+            // 会有一个定时器来倒计时，这里需要一个全局变量time
+            var timer = setInterval(function(){
+                if(time ==  0){
+                    // 停止计时器
+                    clearInterval(timer);
+                    // 解除按钮的禁用
+                    button.disabled = false;
+                    button.innerHTML = '发送';
+                    time = 5;
+                }else {
+                    button.innerHTML = '还需' + time + '秒';
+                    --time;
+                }
+            },1000)
+        })
+    </script>
+</body>
+</html>

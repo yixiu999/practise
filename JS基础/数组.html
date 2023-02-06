@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 遍历数组案例：求数组【2，6，1，7，4】里面的所有元素的和以及平均值
+        // var arr = [2,6,1,7,4];
+        // var sum = 0;
+        // for(var i = 0; i < arr.length; i++){
+        //     sum += arr[i];
+        // }
+        // console.log('数组的和是：'+sum);
+        // console.log('数组的平均值是：'+sum/arr.length);
+
+
+        // // 筛选数组：将数字【2，0，6，1，77，0，52，0，25，7】中大于等于10的元素选出来，放入新数组
+        // var newArry = [];
+        // var arry1 = [2,0,6,1,77,0,52,0,25,7];
+        // var n =0;  //这里可以省掉，用newArry.length来替代
+        // for( var j = 0; j<arry1.length;j++){
+        //     if( arry1[j]>=10){
+        //         newArry[n] = arry1[j];
+        //         n++;
+        //     }
+        // }
+        // console.log(newArry);
+
+        // 冒泡排序：【5，4，3，2，1】按从小到大排序
+        // 先外层循环arry.length-1次，然后内层循环数组索引号从0开始，循环arry.length-i次
+        var arry = [5,4,3,2,1];
+        var temp = '';
+        for(var i = 0; i < arry.length - 1; i++){
+            for(var j = 0; j < arry.length - i; j++){
+                if( arry[j] > arry[j+1]){
+                    temp = arry[j];
+                    arry[j] = arry[j+1];
+                    arry[j+1] = temp;
+                }
+            }
+        }
+        console.log(arry);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

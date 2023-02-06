@@ -1,0 +1,304 @@
+/* 首页的样式 */
+
+/* 轮播图banner样式 */
+.banner{
+    margin-top: 30px;
+    height: 500px;
+}
+
+.banner .wrapper{
+    position: relative;
+    height: 500px;
+}
+
+.banner .aside{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 251px;
+    height: 500px;
+    background-color: #000;
+    opacity: 0.7;
+}
+
+.banner .aside a{
+    display: block;
+    padding-left: 36px;
+    height: 50px;
+    line-height: 50px;
+    font-style: 14px;
+    color: #fff;
+}
+
+/* 这个侧边导航箭头也可以用伪元素a::after来完成 */
+.banner .aside ul li span{
+    float: right;
+    margin-top: 19px;
+    margin-right: 19px;
+    width: 9px;
+    height: 13px;
+    background-image: url(../images/sprites.png);
+    background-position: -38px -110px;
+}
+
+.banner .aside a:hover{
+    background-color: #27ba9b;
+}
+
+/* 箭头 */
+.prev,
+.next{
+    position: absolute;
+    top: 228px;
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    background-color: rgba(0,0,0,.2);
+    border-radius: 50%;
+    background-image: url(../images/sprites.png);
+}
+
+.prev{
+    left: 260px;
+    background-position: 14px -59px;
+}
+
+.next{
+    right: 10px;
+    background-position: -23px -59px;
+}
+
+/* 圆点 */
+.banner ol{
+    position: absolute;
+    left: 680px;
+    bottom: 30px;
+	height: 10px;
+}
+
+.banner ol li{
+    float: left;
+    margin-right: 26px;
+    width: 9px;
+    height: 10px;
+    background-color: rgba(255,255,255,0.4);
+    border-radius: 50%;
+}
+
+/* 设置圆点li的点击状态 */
+.banner ol .current{
+    background-color: #fff;
+}
+
+/*  新鲜好物专区 */
+.goods{
+    margin-top: 48px;
+    height: 470px;
+}
+
+.goods .hd
+.shengxian .hd{
+    height: 30px;
+    line-height: 30px;
+}
+
+.goods h2{
+    float: left;
+    width: 1000px;
+    font-size: 29px;
+    color: #333;
+    font-weight: 400;
+}
+
+.goods h2 span{
+    margin-left: 34px;
+    font-size: 16px;
+    color: #999;
+}
+
+.goods a,
+.fresh .hd .more{
+    float: right;
+    margin-right: 2px;
+    color: #999;
+}
+
+.goods .hd a::after,
+.fresh .hd .more::after{
+    display: inline-block;
+    content: '';
+    margin-left: 13px;
+    width: 7px;
+    height: 13px;
+    background-image: url(../images/sprites.png);
+    background-position: 0px -110px;
+    vertical-align: middle;
+}
+
+.goods .bd{
+    margin-top: 30px;
+    height: 405px;
+}
+
+.goods .bd li img{
+    width: 304px;
+}
+
+.goods .bd li{
+    position: relative;
+    float: left;
+    margin-top: 30px;
+    margin-right: 8px;
+    width: 304px;
+    height: 405px;
+    background-color: #f0f9f4;
+}
+
+.goods .bd li:last-child{
+    margin-right: 0;
+}
+
+.goods .bd li h3{
+    margin-top: 22px;
+    font-weight: 400;
+    text-align: center;
+    font-size: 20px;
+    color: #333;
+}
+
+.goods .bd span{
+    margin-top: 23px;
+    margin-left: 131px;
+    font-size: 17px;
+    color: #9a2e1f;
+}
+
+.goods .bd p,
+.fresh .bd .right li a p{
+    display: inline-block;
+    font-size: 23px;
+    color: #9a2e1f;
+}
+
+.goods .bd a b{
+    position: absolute;
+    top: 18px;
+    left: 17px;
+    width: 28px;
+	height: 51px;
+    border: 1px solid #27ba9b;
+    border-radius: 2px;
+    font-size: 18px;
+    color: #27ba9b;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: center;
+}
+
+/* 生鲜 */
+.fresh{
+    margin-top: 70px;
+    height: 674px;
+
+}
+
+.fresh .hd{
+    height: 30px;
+    line-height: 30px;
+}
+
+.fresh .hd h2{
+    float: left;
+    font-weight: 400;
+    font-size: 29px;
+}
+
+.fresh .hd ul{
+    float: right;
+    margin-right: 60px;
+    height: 30px;
+}
+
+.fresh .hd li{
+    float: left;
+}
+
+.fresh .hd li a{
+    display: inline-block;
+    /* margin-right: 3px; */
+    padding: 0 5px;
+    width: 60px;
+    height: 30px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.fresh .hd li:hover{
+    background-color: #27ba9b;
+    color: #fff;
+}
+
+.fresh .bd{
+    margin-top: 34px;
+}
+
+.fresh .bd .left{
+    float: left;
+    width: 240px;
+    height: 610px;
+}
+
+.fresh .bd .right{
+    float: left;
+    width: 1000px;
+    height: 610px;
+}
+
+.fresh .bd ul li img{
+    width: 184px;
+    height: 184px;
+}
+
+.fresh .bd ul li{
+    float: left;
+    margin-left: 8px;
+    width: 242px;
+    height: 304px;
+}
+
+.fresh .bd ul li a{
+    display: block;
+    margin-bottom: 3px;
+    padding-left: 29px;
+    padding-right: 29px;
+    width: 242px;
+    height: 304px;
+}
+
+.fresh .bd .right h5{
+    margin-top: 12px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #333;
+}
+
+.fresh .bd .right h6{
+    font-size: 16px;
+    font-weight: 400;
+    color: #333;
+}
+
+.fresh .bd .right li a span{
+    margin-top: 10px;
+    font-size: 17px;
+    color: #9a2e1f;
+}
+
+.fresh .bd .right li a p{
+    margin-top: 6px;
+}
+
+
+.fresh .bd .right li:hover{
+    border: 2px solid #27ba9b;
+}

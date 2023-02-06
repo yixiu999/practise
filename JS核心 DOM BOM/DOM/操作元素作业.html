@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            margin: 100px auto;
+            width: 300px;
+        }
+        .username{
+            padding-left: 7px;
+            height: 20px;
+            color: #999;
+            font-size: 12px;
+            /* 改变边框颜色  1、去掉边框线  2、自定义边框 */
+            outline:none;
+            border: 1px solid #999;
+        }
+        .ad{
+            border: 1px solid #9d9d9d;
+        }
+        .wrong{
+            vertical-align: top;
+        }
+        ul{
+            display: none;
+            margin: 0;
+            padding:0;
+        }
+        li{
+            list-style: none;
+        }
+        a{
+            display: block;
+            text-decoration: none;
+            width: 80px;
+            height: 35px;
+            border: 1px solid #999;
+            text-align: center;
+            line-height: 30px;
+            color:#000;
+        }
+        .mess{
+            width: 80px;
+            height: 30px;
+            margin: 0;
+            border: 1px solid #999;
+            text-align: center;
+            line-height: 30px;
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- 1、世纪佳缘 用户名 显示隐藏内容 -->
+    <div class="shijijiayuan">
+        <input type="text" value="邮箱/ID/手机号" class="username">
+    </div>
+
+    <!-- 2、京东关闭广告 -->
+    <div class="jd">
+        <img src="image/logo.gif" alt="广告" class="ad">
+        <img src="image/wrong.png" alt="" class="wrong">
+    </div>
+
+
+    <!-- 3、新浪下拉菜单（微博） 鼠标放上去onmousemove  鼠标离开onmouseout -->
+    <div class="sina">
+        <div class="mess">消息</div>
+        <ul>
+            <li><a href="">点赞</a></li>
+            <li><a href="">评论</a></li>
+            <li><a href="">收藏</a></li>
+        </ul>
+    </div>
+
+
+    <!-- 4、开关灯案例 -->
+    <div class="box">
+        <button>开关灯</button>
+    </div>
+
+
+    <script>
+        // 世纪佳缘 用户名
+        var username = document.querySelector('.username');
+        // （鼠标点击）获得焦点时，value值为空
+        username.onfocus = function() {
+            if(this.value === '邮箱/ID/手机号'){
+                this.value = '';
+            }
+        }
+        // 失去焦点时，若value长度为0（没有输入）则显示'邮箱/ID/手机号'，若长度>0则不变
+        username.onblur = function() {
+            if(this.value.length == 0){
+                this.value = '邮箱/ID/手机号';
+            }
+        }
+        // 世纪佳缘 用户名
+
+
+
+        // 京东关闭广告
+        var ad = document.querySelector('.ad');
+        var close = document.querySelector('.wrong');
+        close.onclick = function() {
+            ad.style.display = 'none';
+            this.style.display = 'none';
+        }
+
+        // 京东关闭广告
+
+
+
+        // 下拉菜单
+        var mess = document.querySelector('.mess');
+        var ul = document.querySelector('ul');
+        mess.onmousemove = function() {
+            ul.style.display = 'block';
+        }
+        mess.onmouseout = function() {
+            ul.style.display = 'none';
+        }
+        // 下拉菜单
+
+
+
+        // 开关灯案例
+        var button = document.querySelector('button');
+        // 非黑即白  可以用flag标记
+        var flag = 0;
+        button.onclick = function() {
+            if(flag === 0){
+                document.body.style.backgroundColor = '#000';
+                flag = 1;
+            }else if (flag === 1){
+                document.body.style.backgroundColor = '#fff';
+                flag = 0;
+            }
+        }
+        // 开关灯案例
+    </script>
+</body>
+</html>

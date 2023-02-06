@@ -1,0 +1,354 @@
+body{
+    color: #333;
+}
+
+.panel{
+    padding: 28px 20px;
+    background-color: #fff;
+    margin-bottom: 20px;
+}
+
+.header{
+    margin-bottom: 30px;
+}
+
+/* 设置网页背景颜色 */
+.xtx_body{
+    padding: 30px 0 85px;
+    background-color: #f6f6f6;
+}
+
+/* 设置小兔鲜主体内容样式 */
+.xtx_body .wrapper{
+    display: flex;
+}
+
+
+
+/* 侧边栏 */
+.xtx_body .aside{
+    width: 227px;
+	height: 1348px;
+    background-color: #fff;
+    margin-right: 18px;
+}
+
+
+/* 用户头像昵称部分 */
+.aside .user{
+    width: 100%;
+    height: 250px;
+    /* 水平居中 */
+    text-align: center;
+    border-bottom: 1px solid #f4f4f4;
+}
+
+.aside .user a:first-child{
+    display: inline-block;
+    margin-top: 47px;
+    margin-bottom: 14px;
+    width: 85px;
+    height: 85px;
+    overflow: hidden;
+}
+
+.aside .user a:last-child{
+    display: inline-block;
+    margin-top: 12px;
+    width: 93px;
+	height: 26px;
+	background-image: linear-gradient(264deg, 
+		#e05e2f 0%, 
+		#ea745e 95%);
+	/* linear-gradient(0deg, 
+		#e4973c 100%); */
+    border-radius: 13px;
+    font-size: 13px;
+    color: #f9f9f9;
+}
+
+.aside .user a:last-child img{
+    margin: 5px 0 6px;
+    width: 15px;
+    height: 16px;
+}
+
+/* 目录:账号/交易管理/收藏/帮助 */
+.aside .list{
+    display: flex;
+    flex-direction: column;
+}
+
+.aside .list div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding-top: 22px;
+    padding-left: 52px;
+    border-top: 1px solid #f4f4f4;
+    font-size: 14px;
+}
+
+.aside .list .personal{
+    padding-top: 33px;
+    border-top: none;
+    height: 454px;
+}
+
+.aside .list .transaction{
+    height: 275px;
+}
+
+.aside .list .collection{
+    height: 200px;
+}
+
+.aside .list .help{
+    height: 150px;
+}
+
+.aside .list div h5{
+    margin-bottom: 30px;
+    font-size: 18px;
+    font-weight: 400;
+    color: #333;
+}
+
+.aside .list div a{
+    flex: 1;
+    font-size: 14px;
+    color: #666;
+}
+
+.aside .list div a:hover{
+    color: #5cb99e;
+}
+
+
+/* 主体部分 */
+.main{
+    flex: 1;
+}
+
+
+/* 用户账户概览 */
+.main .overview{
+    display: flex;
+    background-color: #fff;
+    margin-bottom: 18px;
+    height: 132px;
+    padding:20px 0;
+}
+
+.main .overview div{
+    display: flex;
+    flex: 1;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+}
+
+
+.main .overview img{
+    width: 25px;
+    height: 22px;
+    margin-bottom: 18px;
+}
+
+.main .overview a:nth-child(3) img{
+    width: 18px;
+    height: 25px;
+}
+
+.main .overview div:first-child{
+    border-right: 1px solid #f4f4f4;
+}
+
+.main .overview p{
+    font-size: 16px;
+}
+
+.main .overview a i{
+    font-size: 25px;
+    margin-bottom: 20px;
+    color: #e05e30;
+}
+
+
+
+/* 各种info板块的title */
+.main .panel_title{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #f4f4f4;
+}
+
+.main .panel_title h3{
+    font-size: 22px;
+    font-weight: 400;
+}
+
+
+.main .panel_title a{
+    color: #999;
+}
+
+
+.main .orders .info li{
+    display: flex;
+    height: 137px;
+    border: 1px solid #f4f4f4;
+    margin-bottom: 20px;
+}
+
+
+/* 取消第一个li的上边框与标题的下边框重叠 */
+.main .orders .info li:first-child{
+    border-top: none;
+}
+
+/* 取消最后一个li的下方的外边距 */
+.main .orders .info li:last-child{
+    margin-bottom: 0;
+}
+
+.main .orders .goods{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 17px 0 14px 12px;
+    margin-right: 120px;
+}
+
+.main .orders .goods img{
+    width: 107px;
+    height: 107px;
+}
+
+.main .orders .goods .txt{
+    flex: 1;
+    width: 0;
+}
+
+.main .orders .goods .txt h5{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.main .orders .goods .txt p{
+    font-size: 14px;
+    color: #999;
+}
+
+
+.main .orders .statu{   
+    width: 121px;
+    color: #e05e30;
+}
+
+.main .orders .statu a{
+    color: #999999;
+}
+
+.main .orders .pay{
+    width: 200px;
+    border-left: 1px solid #f4f4f4;
+    border-right: 1px solid #f4f4f4;
+}
+
+.main .orders .pay p:first-child{
+    color: #9a2e1f;
+}
+
+.main .orders .common{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+}
+
+
+.main .orders .action{
+    width: 180px;
+}
+
+.main .orders .action a{
+    margin-bottom: 5px;
+}
+
+.main .orders .action a:first-child{
+    width: 100px;
+    height: 30px;
+    background-color: #5eb69c;
+	border-radius: 2px;
+    line-height: 30px;
+    text-align: center;
+    color: white;
+}
+
+.main .orders .action a:last-child{
+    margin-bottom: 0;
+}
+
+
+
+/* 收藏商品和我的足迹info */
+.main .panel_info{
+    margin-top: 34px;
+    padding-left: 15px;
+    display: flex;
+}
+
+.main .panel_info a{
+    position: relative;
+    width: 180px;
+    height: 280px;
+    margin-right: 60px;
+}
+
+.main .panel_info a:last-child{
+    margin: 0;
+}
+
+/* 只设置图片居中 */
+.main .panel_info .pic{
+    text-align: center;
+}
+
+.main .panel_info img{
+    width: 160px;
+    height: 160px;
+}
+
+
+.main .panel_info .txt p:nth-child(1){
+    margin-top: 23px;
+    margin-bottom: 18px;
+}
+
+.main .panel_info .txt p:nth-child(2){
+    font-size: 22px;
+    color: #9a2e1f;
+}
+
+.main .panel_info span{
+    font-size: 17px;
+}
+
+/* 折扣:绝对定位;子绝父相 */
+.main .panel_info i{
+    position: absolute;
+    left: 4px;
+    top: -25px;
+    width: 28px;
+	height: 51px;
+	border-radius: 3px;
+	border: solid 1px #5eb69c;
+    text-align: center;
+    line-height: 24px;
+    font-size: 18px;
+    color: #5eb69c;
+}

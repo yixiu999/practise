@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 字面量形式创建一个名字为可可的狗对象
+        // 具体信息：
+        // 姓名：可可
+        // 类型：阿拉斯加犬
+        // 年龄：5岁
+        // 颜色：棕红色；
+        // 技能：汪汪汪（bark），演电影（showfilm)
+        var obj = {
+            name:'可可',
+            type:'阿拉斯加犬',
+            age:5,
+            color:'brown',
+            bark:function(){
+                console.log('汪汪汪~');
+            },
+            showfilm:function(){
+                console.log('可以演电影噢');
+            }
+        }
+
+
+        // 用new Object形式创建一个鸣人对象
+        // 具体信息：
+        // 姓名：鸣人
+        // 性别：男
+        // 年龄：19
+        // 技能（skill):影分身术
+        var chara = new Object();
+        chara.name = '鸣人';
+        chara.sex = '男';
+        chara.age = 19;
+        chara.skill = function(){console.log('影分身术');}
+        console.log(chara.name);
+
+
+
+        // 利用构造函数创建两个英雄对象。
+        // 函数中的公共部分包括：姓名属性(name)，类型属性(type)，血量属性(blood)和攻击方式(attack)
+        // 英雄对象的信息如下：
+        // 廉颇  力量型  500血量  攻击：近战
+        // 后裔  射手型  500血量  攻击：远程
+        function Chara(name,type,blood,attack){
+            this.name = name;
+            this.type = type;
+            this.blood = blood;
+            this.attack = attack;
+        }  //构造函数    泛指
+        var lianpo = new Chara('廉颇','力量型','500','近战');  //对象    特指
+        var houyi = new Chara('后裔','射手型','500','远程');  //对象
+        console.log(lianpo);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        table{
+            width: 400px;
+            margin: 100px auto;
+            /* 表格边框合并 */
+            border-collapse: collapse;
+            text-align: center;
+        }
+        th{
+            width: 50px;
+            height: 30px;
+            background-color: #ccc;
+        }
+        td,th{
+            border: 1px solid #333;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th style="width: 100px;">科目</th>
+                <th>成绩</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+        </tbody>
+    </table>
+
+
+
+    <script>
+        // 创建数据
+        var data = [{
+            name:'张三',
+            subject:'javaScript',
+            score:100,
+        },{
+            name:'李四',
+            subject:'javaScript',
+            score:98,
+        },{
+            name:'Lisa',
+            subject:'javaScript',
+            score:96,
+        },{
+            name:'Jennie',
+            subject:'javaScript',
+            score:96,
+        }]
+
+        var tbody = document.querySelector('tbody');
+        // 开始渲染表格
+        // 创建表格的行，数组里面有几个值就是几行，循环数组创建行节点
+        for(var i = 0; i < data.length; i++) {
+            var tr = document.createElement('tr');
+            tbody.appendChild(tr);
+            // 接着在每一行里创建每一格td，每一格的内容就是对象里的属性值，这里要循环对象属性值
+            for (const k in data[i]) {
+                var td = document.createElement('td');
+                tr.appendChild(td);
+                // 添加属性值给td节点，填充表格数据   注：data[i]是一个对象，data[i][k]是返回属性值
+                td.innerHTML = data[i][k];
+            }
+            // 创建删除文字单元格
+            var td = document.createElement('td');
+            tr.appendChild(td);
+            td.innerHTML = '<a href = "javaScript:;">删除</a>';
+        }
+
+        // 给删除添加点击事件，点击删除会删除掉该行
+        var a = document.querySelectorAll('a');
+        for(var i = 0; i < a.length; i++) {
+            a[i].onclick = function() {
+            // 等于是删除这个a的爸爸的爸爸tr
+            // console.log('删除');
+            tbody.removeChild(this.parentNode.parentNode);
+            }
+        }
+    </script>
+</body>
+</html>

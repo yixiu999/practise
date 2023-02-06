@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li{
+            width: 200px;
+        }
+        a{
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <textarea name="" id="" cols="30" rows="6"></textarea>
+    <button class="send">发布</button>
+    <!-- <button class="delete">删除</button> -->
+    <ul>
+
+    </ul>
+
+
+    <script>
+        var text = document.querySelector('textarea');
+        var send = document.querySelector('.send');
+        var ul = document.querySelector('ul');
+        // var del = document.querySelector('.delete');
+
+        send.onclick = function() {
+            if(text.value == ''){
+                alert('您没有输入内容');
+                // return false;
+            }else{
+                // 创建节点
+                var li = document.createElement('li');
+                // 添加节点：将节点放到ul后面，这里只是创建了一个元素节点
+                ul.appendChild(li);
+                // 将输入到text里面的值赋给li的内容
+                li.innerHTML = text.value + '<a href = "javascript:;">删除</a>';
+                // href = "javascript:;"这里是为了阻止跳转
+
+                // 给删除设置点击事件
+                var sc = document.querySelectorAll('a');
+                for(var i = 0; i < sc.length; i++) {
+                    sc[i].onclick = function() {
+                        // console.log('删除');
+                        // 这里要删的是a所在的li，就是this.parentNode
+                        ul.removeChild(this.parentNode);
+                    }
+                }
+            }
+        }
+
+        // del.onclick = function() {
+        //     if(ul.children.length == 0) {
+        //         this.disabled = true;
+        //     } else {
+        //         ul.removeChild(ul.children[0]);
+        //     }
+        // }
+        
+    </script>
+</body>
+</html>

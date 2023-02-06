@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 案例：判断是否中奖
+        // 接收用户输入的姓名，来判断是否中奖。如果输入的是11，则提示中奖5块钱，否则提示没有中奖
+        // var name = prompt('请输入您的名字');
+        // if (name == '11') {
+        //     alert('恭喜你这个老六中奖5元！')
+        // } else {
+        //     alert('抱歉，运气欠佳。')
+        // }
+
+
+        //案例：数字补0
+        //用户输入数字，如果数字小于10，则在前面补0，比如01，09；如果数字大于10，则不需要补
+        var num = prompt('请输入数字');
+        result = num >= 10 ? num : '0' + num; //把返回值赋值给一个变量
+        alert(result);
+
+
+        //案例：查询水果价格
+        // 用户在弹出框里面输入一个水果，如果有就弹出该水果的价格，如果没有此水果就弹出“没有此水果”
+        // 思路：
+        // 弹出promt输入框，让用户输入水果名称，把这个值取过来保存到变量中
+        // 将这个变量作为switch括号里面的表达式
+        // case后面的值写几个不同的水果名称，注意一定要加引号，因为必须是全等匹配
+        // 弹出不同价格即可。同样注意每个case之后加上break，以便退出swicth语句
+        // 将default设置为没有此水果
+        var fruit = prompt('请输入一个水果名称');
+        switch (fruit) {
+            case '苹果':
+                alert('3.5/斤');
+                break;
+            case '榴莲':
+                alert('35/斤');
+                break;
+            default:
+                alert('没有这个啦！');
+                break;
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

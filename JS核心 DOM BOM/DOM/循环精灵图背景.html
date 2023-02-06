@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            margin: 100px auto;
+            width: 250px;
+            /* border: 1px solid #ccc; */
+        }
+        li{
+            float: left;
+            list-style-type: none;
+            width: 24px;
+            height: 24px;
+            margin: 15px;
+            background-color: pink;
+            background: url(image/sprite.png) no-repeat;
+            background-position: 0 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+
+    <script>
+        var lis = document.querySelectorAll('li');
+        console.log(lis);
+        var pos = 0;
+        for(i = 0; i < lis.length; i++){
+            pos = 44 * i;
+            lis[i].style.backgroundPosition = '0 -' + pos + 'px';
+            // PS：这里的position属性要用驼峰命名法
+        }
+    </script>
+</body>
+</html>
